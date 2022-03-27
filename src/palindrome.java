@@ -1,33 +1,28 @@
 import java.util.Locale;
-
-public class palindrome {
-
-    static boolean Palindromeis(String str){
-        int i,j;
-        i = 0; j = str.length()-1;
-
-        while (i<j) {
-            if (str.charAt(i) != str.charAt(j))
-                return false;
-            i++;
-            j--;
-        }
-        return true;
-
-
-
-        }
+import java.util.Scanner;
+        public class palindrome{
 
 
 
     public static void main(String[] args) {
-        String str = "abba";
-        str= str.toLowerCase();
-        if (Palindromeis(str))
-            System.out.print("yes");
-        else
-            System.out.print("No");
+        Scanner String  = new Scanner(System.in);
 
+
+        String str, rev = "";
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a string:");
+        str = sc.nextLine();
+
+        int length = str.length();
+
+        for ( int i = length - 1; i >= 0; i-- )
+            rev = rev + str.charAt(i);
+
+        if (str.equals(rev))
+            System.out.println(str+" is a palindrome");
+        else
+            System.out.println(str+" is not a palindrome");
 
 
 
